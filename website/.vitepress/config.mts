@@ -48,6 +48,7 @@ export default defineConfig({
           items: [
             { text: "📦 项目概览", link: "/projects/" },
             { text: "🌊 OBS Stage", link: "/projects/obs-stage" },
+            { text: "🦊 go-musicfox", link: "/projects/musicfox" },
             { text: "💬 Bili Live Danmaku", link: "/projects/bili-live-danmaku" },
           ],
         },

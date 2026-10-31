@@ -20,4 +20,11 @@ Bili Live Danmaku 是直播中的透明弹幕面板，负责把 B站直播事件
 
 ![Bili Live Danmaku 在 OBS 中的效果](/images/preview.obs.png)
 
+## 🦊 相关播放器
+
+歌曲信息、封面和歌词由 go-musicfox fork 的 SPlayer-Next 兼容 API 提供，再通过独立的
+OBS Browser Source 与弹幕层组合成完整直播画面。
+
+[查看 go-musicfox (VincentZyu Fork) →](/projects/musicfox)
+
 [查看 Bili Live Danmaku GitHub 仓库](https://github.com/VincentZyu233/bili-live-danmaku)

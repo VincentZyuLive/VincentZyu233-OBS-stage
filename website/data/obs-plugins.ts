@@ -7,7 +7,7 @@ export const obsPlugins: ObsPlugin[] = [
     name: "OBS Browser",
     version: "32.2.1",
     source: "OBS 内置",
-    purpose: "运行 OBS Stage 前景层与 Bili Live Danmaku 透明弹幕层。",
+    purpose: "运行 OBS Stage 前景层、go-musicfox 歌曲 Overlay 与 Bili Live Danmaku 透明弹幕层。",
   },
   {
     name: "OBS WebSocket",
@@ -37,7 +37,7 @@ export const obsPlugins: ObsPlugin[] = [
 
 export const obsLayerStack = [
   "Stage BG [scene] · 舞台背景图片",
-  "显示器采集 / 窗口采集 / SPlayer · 真实内容源",
+  "显示器采集 / 窗口采集 / go-musicfox（或 SPlayer）· 真实内容源",
   "Stage Frame [scene] · 透明前景浏览器源",
   "danmaku · B站弹幕浏览器源",
   "通知、字幕等临时层",

@@ -11,6 +11,15 @@ export const projects: ProjectCardData[] = [
     tags: ["OBS", "WebUI", "Watercolor"],
   },
   {
+    name: "go-musicfox (VincentZyu Fork)",
+    version: "5.1.0-fork",
+    description: "基于 go-musicfox 的 CLI 播放器 fork，新增 SPlayer-Next 兼容 HTTP/WebSocket API，为 OBS 提供歌曲、封面与歌词数据。",
+    repo: "https://github.com/VincentZyu233/go-musicfox-vincentzyu-fork",
+    preview: "/images/preview.musicfox.card.png",
+    accent: "#E36229",
+    tags: ["Go", "CLI", "OBS", "WebSocket"],
+  },
+  {
     name: "Bili Live Danmaku",
     version: "0.1.0",
     description: "透明 B站弹幕面板，支持礼物、入场、SC、历史、自定义字体与 Cookie 助手。",

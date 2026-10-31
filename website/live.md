@@ -11,7 +11,7 @@ import { liveRoom } from './data/projects.ts'
 
 <BilibiliBadge />
 
-日常直播使用 OBS Stage 水色雾蓝舞台与 Bili Live Danmaku 透明弹幕面板。
+日常直播使用 OBS Stage 水色雾蓝舞台、go-musicfox 歌曲视觉与 Bili Live Danmaku 透明弹幕面板。
 
 <div class="live-room-card">
   <span>直播间房间号</span>

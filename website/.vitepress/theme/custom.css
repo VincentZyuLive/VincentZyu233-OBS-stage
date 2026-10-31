@@ -120,6 +120,10 @@ h3 {
   gap: 18px;
 }
 
+.project-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
 .hardware-card,
 .project-card,
 .version-row {
@@ -212,6 +216,7 @@ h3 {
 .project-card-head {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 12px;
 }
