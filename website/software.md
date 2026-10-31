@@ -4,7 +4,7 @@ description: 直播、开发和站点构建软件版本
 ---
 
 <script setup>
-import { software, softwareUpdatedAt } from './.vitepress/data/software'
+import { software, softwareUpdatedAt } from './.vitepress/data/software.ts'
 </script>
 
 # 🧰 软件栈

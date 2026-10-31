@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { withBase } from "vitepress";
-import type { ProjectCardData } from "../../data/types";
+import type { ProjectCardData } from "../../data/types.ts";
 
 const props = defineProps<{ project: ProjectCardData }>();
 </script>

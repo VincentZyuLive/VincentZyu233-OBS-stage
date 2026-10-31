@@ -29,7 +29,7 @@ features:
 ---
 
 <script setup>
-import { liveRoom, projects } from './.vitepress/data/projects'
+import { liveRoom, projects } from './.vitepress/data/projects.ts'
 </script>
 
 <div class="home-extra">

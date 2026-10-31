@@ -4,7 +4,7 @@ description: OBS Studio 版本、插件和舞台分层
 ---
 
 <script setup>
-import { obsLayerStack, obsPlugins, obsUpdatedAt } from './.vitepress/data/obs-plugins'
+import { obsLayerStack, obsPlugins, obsUpdatedAt } from './.vitepress/data/obs-plugins.ts'
 </script>
 
 # 🎛️ OBS 与插件
