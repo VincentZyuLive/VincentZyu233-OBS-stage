@@ -148,8 +148,8 @@ class ObsController:
                 "browser_source",
                 {
                     "url": stage_url,
-                    "width": 1920,
-                    "height": 1080,
+                    "width": 1600,
+                    "height": 900,
                     "fps_custom": True,
                     "fps": 30,
                     "shutdown": True,

@@ -9,8 +9,8 @@ def test_scene_slots_fit_canvas() -> None:
             rect = slot.rect
             assert rect.x >= 0
             assert rect.y >= 0
-            assert rect.x + rect.width <= 1920
-            assert rect.y + rect.height <= 1080
+            assert rect.x + rect.width <= 1600
+            assert rect.y + rect.height <= 900
             assert rect.radius > 0
 
 

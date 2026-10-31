@@ -63,10 +63,10 @@ function renderSlots(layout) {
 
     const placeholder = document.createElement("div");
     placeholder.className = "preview-slot";
-    placeholder.style.left = `${(rect.x / 1920) * 100}%`;
-    placeholder.style.top = `${(rect.y / 1080) * 100}%`;
-    placeholder.style.width = `${(rect.width / 1920) * 100}%`;
-    placeholder.style.height = `${(rect.height / 1080) * 100}%`;
+    placeholder.style.left = `${(rect.x / 1600) * 100}%`;
+    placeholder.style.top = `${(rect.y / 900) * 100}%`;
+    placeholder.style.width = `${(rect.width / 1600) * 100}%`;
+    placeholder.style.height = `${(rect.height / 900) * 100}%`;
     placeholder.style.borderRadius = `${rect.radius}px`;
     const label = document.createElement("span");
     label.textContent = slot.placeholder || slot.label;
@@ -75,10 +75,10 @@ function renderSlots(layout) {
 
     const border = document.createElement("div");
     border.className = "slot-border";
-    border.style.left = `${(rect.x / 1920) * 100}%`;
-    border.style.top = `${(rect.y / 1080) * 100}%`;
-    border.style.width = `${(rect.width / 1920) * 100}%`;
-    border.style.height = `${(rect.height / 1080) * 100}%`;
+    border.style.left = `${(rect.x / 1600) * 100}%`;
+    border.style.top = `${(rect.y / 900) * 100}%`;
+    border.style.width = `${(rect.width / 1600) * 100}%`;
+    border.style.height = `${(rect.height / 900) * 100}%`;
     border.style.borderRadius = `${rect.radius}px`;
     slotBorders.append(border);
   }

@@ -69,7 +69,7 @@ http://127.0.0.1:6162/admin
 - `half-screen`：左侧固定弹幕，右侧主采集卡和横向播放器卡。
 - `full-screen`：全屏采集内容，左侧固定弹幕，右下悬浮播放器。
 
-坐标与尺寸见 [docs/layout-spec.md](docs/layout-spec.md)。
+三个舞台页原生使用 `1600×900` 的 16:9 设计坐标；OBS 浏览器源宽高请设置为 `1600×900`。坐标见 [docs/layout-spec.md](docs/layout-spec.md)。
 
 ## 🗂️ 数据位置
 

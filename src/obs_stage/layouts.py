@@ -12,7 +12,7 @@ def default_layouts() -> dict[SceneId, SceneLayout]:
                 StageSlot(
                     name="media",
                     label="SPlayer / 主内容",
-                    rect=Rect(x=220, y=320, width=1480, height=443, radius=40),
+                    rect=Rect(x=183, y=267, width=1233, height=369, radius=33),
                     placeholder="SPlayer 内容槽",
                 )
             ],
@@ -24,13 +24,13 @@ def default_layouts() -> dict[SceneId, SceneLayout]:
                 StageSlot(
                     name="capture",
                     label="显示器采集",
-                    rect=Rect(x=480, y=96, width=960, height=540, radius=38),
+                    rect=Rect(x=400, y=80, width=800, height=450, radius=32),
                     placeholder="显示器采集",
                 ),
                 StageSlot(
                     name="media",
                     label="SPlayer / 播放器",
-                    rect=Rect(x=530, y=660, width=820, height=245, radius=30),
+                    rect=Rect(x=442, y=550, width=683, height=204, radius=25),
                     placeholder="SPlayer 内容槽",
                 ),
             ],
@@ -42,13 +42,13 @@ def default_layouts() -> dict[SceneId, SceneLayout]:
                 StageSlot(
                     name="capture",
                     label="显示器采集",
-                    rect=Rect(x=20, y=20, width=1880, height=1040, radius=38),
+                    rect=Rect(x=17, y=17, width=1566, height=866, radius=32),
                     placeholder="全屏采集",
                 ),
                 StageSlot(
                     name="media",
                     label="SPlayer / 悬浮播放器",
-                    rect=Rect(x=570, y=790, width=700, height=210, radius=26),
+                    rect=Rect(x=475, y=658, width=583, height=175, radius=22),
                     placeholder="SPlayer 悬浮卡",
                 ),
             ],

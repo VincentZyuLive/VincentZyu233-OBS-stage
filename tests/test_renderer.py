@@ -15,7 +15,7 @@ def test_background_is_rendered_and_cached(tmp_path: Path) -> None:
     assert first == second
     assert first.exists()
     with Image.open(first) as image:
-        assert image.size == (1920, 1080)
+        assert image.size == (1600, 900)
         assert image.mode == "RGB"
 
 

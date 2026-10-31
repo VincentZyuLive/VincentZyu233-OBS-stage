@@ -9,8 +9,8 @@ from PIL import Image, ImageDraw, ImageFilter
 
 from .models import AppConfig, BackgroundStyle, SceneId
 
-WIDTH = 1920
-HEIGHT = 1080
+WIDTH = 1600
+HEIGHT = 900
 
 
 def _color(value: str, alpha: int = 255) -> tuple[int, int, int, int]:
