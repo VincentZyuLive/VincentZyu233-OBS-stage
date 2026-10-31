@@ -32,9 +32,13 @@ features:
 import { liveRoom, projects } from './data/projects.ts'
 </script>
 
-<div class="home-extra">
+<div class="home-live-entry">
+  <div class="home-live-copy">
+    <p class="home-live-kicker">LIVE ON BILIBILI</p>
+    <h2>B站直播间</h2>
+    <p>直播时会在这里使用 OBS Stage 舞台和 Bili Live Danmaku 弹幕面板。</p>
+  </div>
   <BilibiliBadge />
-  <p>直播间房间号：<strong>{{ liveRoom.roomId }}</strong></p>
 </div>
 
 ## 🚀 两个直播工具

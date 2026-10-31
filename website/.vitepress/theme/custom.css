@@ -59,12 +59,58 @@ h3 {
   height: 32px;
 }
 
-.home-extra,
+.home-live-entry .bili-live-badge {
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+.home-live-entry,
 .hardware-grid,
 .project-grid {
   max-width: 1152px;
   margin: 0 auto;
   padding: 0 24px;
+}
+
+.home-live-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 18px;
+  margin-bottom: 38px;
+  padding: 24px 28px;
+  border: 1px solid rgba(127, 168, 232, 0.22);
+  border-radius: 18px;
+  background:
+    linear-gradient(115deg, rgba(127, 168, 232, 0.13), rgba(244, 198, 215, 0.06)),
+    rgba(10, 20, 35, 0.7);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.2);
+}
+
+.home-live-copy {
+  min-width: 0;
+}
+
+.home-live-kicker {
+  margin: 0 0 5px;
+  color: #7fa8e8;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.home-live-copy h2 {
+  margin: 0 0 5px;
+  padding: 0;
+  border: 0;
+  font-size: 24px;
+}
+
+.home-live-copy p:last-child {
+  margin: 0;
+  color: var(--vp-c-text-2);
+  font-size: 14px;
 }
 
 .hardware-grid,
@@ -248,6 +294,14 @@ h3 {
 }
 
 @media (max-width: 760px) {
+  .home-live-entry {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: 16px;
+    margin-right: 16px;
+    padding: 20px;
+  }
+
   .hardware-grid,
   .project-grid {
     grid-template-columns: 1fr;
