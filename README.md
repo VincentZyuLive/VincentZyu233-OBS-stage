@@ -27,6 +27,10 @@
 
 ![OBS Stage 在 OBS 中的半屏效果](docs/images/preview.obs.png)
 
+### 📺 B站直播姬实机
+
+![OBS Stage 在 B站直播姬中的效果](docs/images/preview.bili-livehime.png)
+
 ## ✨ 能力
 
 - 三套独立布局：`no-screen`、`half-screen`、`full-screen`

@@ -20,4 +20,8 @@ OBS Stage 负责水色雾蓝舞台背景、圆角内容槽、前景装饰、头�
 
 ![OBS Stage WebUI](/images/preview.webui.png)
 
+## 📺 B站直播姬实机
+
+![OBS Stage 在 B站直播姬中的效果](/images/preview.bili-livehime.png)
+
 [查看 OBS Stage GitHub 仓库](https://github.com/VincentZyu233/VincentZyu233-OBS-stage)
