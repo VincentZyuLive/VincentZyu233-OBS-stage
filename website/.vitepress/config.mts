@@ -28,8 +28,8 @@ export default defineConfig({
       { text: "本机环境", link: "/environment" },
       { text: "软件栈", link: "/software" },
       { text: "OBS", link: "/obs" },
-      { text: "项目", link: "/projects/" },
       { text: "B站直播", link: live },
+      { text: "项目", link: "/projects/" },
     ],
     sidebar: {
       "/": [
@@ -48,6 +48,7 @@ export default defineConfig({
           items: [
             { text: "📦 项目概览", link: "/projects/" },
             { text: "🌊 OBS Stage", link: "/projects/obs-stage" },
+            { text: "🎵 SPlayer OBS HTML Overlay", link: "/projects/splayer-obs-html-overlay" },
             { text: "🦊 go-musicfox", link: "/projects/musicfox" },
             { text: "💬 Bili Live Danmaku", link: "/projects/bili-live-danmaku" },
           ],

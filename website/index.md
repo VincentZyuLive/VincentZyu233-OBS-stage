@@ -23,6 +23,9 @@ features:
   - icon: 💬
     title: B站弹幕
     details: 透明弹幕面板、礼物与 SC、历史记录、LXGW 字体与 Cookie 助手。
+  - icon: 🪟
+    title: HTML Overlay
+    details: 透明毛玻璃歌词挂件，在 OBS 中展示封面、歌曲信息、进度与三行歌词。
   - icon: 🦊
     title: Musicfox 外部 API
     details: go-musicfox fork 提供 SPlayer-Next 兼容 HTTP/WS API，为 OBS 输出歌曲、封面和歌词。
@@ -39,12 +42,12 @@ import { liveRoom, projects } from './data/projects.ts'
   <div class="home-live-copy">
     <p class="home-live-kicker">LIVE ON BILIBILI</p>
     <h2>B站直播间</h2>
-    <p>直播时会使用 OBS Stage 舞台、go-musicfox 歌曲视觉与 Bili Live Danmaku 弹幕面板。</p>
+    <p>直播时会使用 OBS Stage 舞台、go-musicfox 数据、SPlayer OBS HTML Overlay 与 Bili Live Danmaku 弹幕面板。</p>
   </div>
   <BilibiliBadge />
 </div>
 
-## 🚀 三个直播工具
+## 🚀 四个直播工具
 
 <div class="project-grid">
   <ProjectCard v-for="project in projects" :key="project.name" :project="project" />

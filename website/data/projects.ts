@@ -11,6 +11,15 @@ export const projects: ProjectCardData[] = [
     tags: ["OBS", "WebUI", "Watercolor"],
   },
   {
+    name: "SPlayer OBS HTML Overlay",
+    version: "0.1.0",
+    description: "透明毛玻璃音乐歌词挂件，通过 SPlayer-Next 兼容 API 在 OBS 中展示封面、歌曲信息、进度与三行歌词。",
+    repo: "https://github.com/VincentZyu233/splayer-status-html-overlay-for-obs",
+    preview: "/images/preview.splayer-obs-html-overlay.card.png",
+    accent: "#A7C8FF",
+    tags: ["OBS", "HTML", "Lyrics", "WebSocket"],
+  },
+  {
     name: "go-musicfox (VincentZyu Fork)",
     version: "5.1.0-fork",
     description: "基于 go-musicfox 的 CLI 播放器 fork，新增 SPlayer-Next 兼容 HTTP/WebSocket API，为 OBS 提供歌曲、封面与歌词数据。",
