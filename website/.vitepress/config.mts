@@ -63,7 +63,6 @@ export default defineConfig({
     },
     footer: {
       message: "直播环境、OBS 舞台与弹幕工具记录",
-      copyright: "Copyright © 2026 VincentZyu",
     },
   },
 });
