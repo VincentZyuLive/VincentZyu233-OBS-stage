@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OBS Stage</title>
+    <link rel="stylesheet" href="/static/stage.css" />
+  </head>
+  <body>
+    <main id="stage" class="stage" data-scene="no-screen">
+      <div id="previewContent" class="preview-content" hidden></div>
+      <svg id="stageMask" class="stage-mask" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <mask id="slotMask" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080">
+            <rect x="0" y="0" width="1920" height="1080" fill="white" />
+          </mask>
+        </defs>
+        <image id="stageBackground" x="0" y="0" width="1920" height="1080" preserveAspectRatio="xMidYMid slice" mask="url(#slotMask)" />
+      </svg>
+      <div id="glowLayer" class="glow-layer"></div>
+      <div id="slotBorders" class="slot-borders"></div>
+      <div class="edge-line edge-line-top"></div>
+      <div class="edge-line edge-line-bottom"></div>
+      <header id="brand" class="brand">
+        <div id="avatarWrap" class="avatar-wrap">
+          <img id="avatar" class="avatar" alt="主播头像" />
+        </div>
+        <div class="brand-copy">
+          <div class="brand-kicker">WATERCOLOR STAGE</div>
+          <div id="brandTitle" class="brand-title">VincentZyu</div>
+          <div id="brandSubtitle" class="brand-subtitle">LIVE STAGE</div>
+        </div>
+      </header>
+      <div id="sceneBadge" class="scene-badge">NO SCREEN</div>
+      <div id="clock" class="clock">00:00</div>
+      <div id="particles" class="particles" aria-hidden="true"></div>
+      <div class="corner corner-tl"></div>
+      <div class="corner corner-tr"></div>
+      <div class="corner corner-bl"></div>
+      <div class="corner corner-br"></div>
+    </main>
+    <script type="module" src="/static/stage.js"></script>
+  </body>
+</html>

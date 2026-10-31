@@ -1,0 +1,15 @@
+{
+  "id": "mizuiro",
+  "name": "水色雾蓝",
+  "description": "深海军蓝、雾蓝光、冰蓝高光、奶油白与缎带粉组成的水彩舞台。",
+  "palette": {
+    "background": "#08111F",
+    "surface": "#101C30",
+    "primary": "#7FA8E8",
+    "highlight": "#DCEBFF",
+    "pink": "#F4C6D7",
+    "cream": "#FFF3DE",
+    "text": "#F4F7FF",
+    "muted": "#93A4BD"
+  }
+}

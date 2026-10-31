@@ -1,0 +1,61 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "obs-stage"
+version = "0.1.0"
+description = "Editable watercolor stage overlays for OBS Browser Source"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "Vincent Zyu" }]
+keywords = ["obs", "stage", "overlay", "streaming", "browser-source"]
+dependencies = [
+  "fastapi>=0.115.0",
+  "pillow>=11.0.0",
+  "python-multipart>=0.0.20",
+  "simpleobsws>=1.4.3",
+  "uvicorn[standard]>=0.34.0",
+]
+
+[project.scripts]
+obs-stage = "obs_stage.cli:main"
+
+[dependency-groups]
+dev = [
+  "httpx2>=2.16.0",
+  "mypy>=1.15.0",
+  "pytest>=8.3.0",
+  "pytest-asyncio>=0.25.0",
+  "ruff>=0.11.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/obs_stage"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"src/obs_stage/static" = "obs_stage/static"
+"src/obs_stage/themes" = "obs_stage/themes"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+packages = ["obs_stage"]
+warn_unused_ignores = true
+
+[[tool.mypy.overrides]]
+module = ["PIL", "PIL.*", "simpleobsws", "simpleobsws.*"]
+ignore_missing_imports = true
