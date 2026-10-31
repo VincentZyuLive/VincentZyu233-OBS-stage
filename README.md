@@ -1,5 +1,9 @@
 # 🌊 OBS Stage
 
+<p align="center">
+  <img src="src/obs_stage/static/assets/obs-stage-avatar.png" width="160" alt="OBS Stage logo">
+</p>
+
 给 OBS 直播间增加一套可编辑的水色雾蓝主题舞台。OBS 负责采集与合成，浏览器中的 WebUI 负责背景、圆角边框、头像徽章、标题和轻动态装饰。
 
 > [!TIP]
