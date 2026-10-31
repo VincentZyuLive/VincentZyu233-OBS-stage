@@ -123,7 +123,7 @@ function applyConfig(nextConfig, revision = avatarRevision) {
   const root = document.documentElement.style;
   root.setProperty("--radius", `${theme.frame_radius}px`);
   root.setProperty("--frame-width", `${theme.frame_width}px`);
-  root.setProperty("--font-family", `"${theme.font_family.replaceAll('"', "")}", "Microsoft YaHei UI", sans-serif`);
+  root.setProperty("--font-family", `"${theme.font_family.replaceAll('"', "")}", sans-serif`);
   glowLayer.style.opacity = String(0.35 + theme.glow_strength * 0.65);
   const layout = config.layouts[scene];
   renderSlots(layout);

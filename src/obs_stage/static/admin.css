@@ -1,6 +1,14 @@
+@font-face {
+  font-family: "LXGW WenKai Mono";
+  src: url("/static/fonts/LXGWWenKaiMono-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 :root {
   color-scheme: dark;
-  font-family: "Microsoft YaHei UI", "Microsoft YaHei", "Segoe UI", sans-serif;
+  font-family: "LXGW WenKai Mono", sans-serif;
   background: #07101c;
   color: #f4f7ff;
   --card: rgba(15, 27, 45, 0.9);
@@ -24,7 +32,7 @@ body {
     #07101c;
 }
 
-button, input, select { font: inherit; }
+button, input, select, textarea, pre, code { font: inherit; }
 
 .shell { width: min(1580px, calc(100% - 44px)); margin: 0 auto; padding: 28px 0 48px; }
 .topbar { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 22px; }
