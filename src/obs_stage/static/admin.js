@@ -270,14 +270,16 @@ byId("previewObsBtn").addEventListener("click", () => previewObs().catch((error)
 }));
 byId("applySceneBtn").addEventListener("click", () => applyObs(false).catch((error) => showNotice(error.message, true)));
 byId("applyAllBtn").addEventListener("click", () => applyObs(true).catch((error) => showNotice(error.message, true)));
-byId("copyUrlBtn").addEventListener("click", async () => {
+async function copyStageUrl() {
   try {
     await navigator.clipboard.writeText(elements.stageUrl.textContent);
     showNotice("OBS 舞台源地址已复制。");
   } catch {
     showNotice("复制失败，请手动选择地址。", true);
   }
-});
+}
+byId("copyUrlBtn").addEventListener("click", copyStageUrl);
+byId("copyUrlSideBtn").addEventListener("click", copyStageUrl);
 window.addEventListener("resize", resizePreview);
 
 boot().catch((error) => showNotice(`初始化失败：${error.message}`, true));

@@ -7,7 +7,13 @@
 
 ## 🖼️ 预览
 
-![OBS Stage 水色雾蓝主题](docs/images/preview.png)
+### 🎛️ WebUI
+
+![OBS Stage WebUI](docs/images/preview.webui.png)
+
+### 🎬 OBS 半屏实机
+
+![OBS Stage 在 OBS 中的半屏效果](docs/images/preview.obs.png)
 
 ## ✨ 能力
 
@@ -98,4 +104,5 @@ uv run scripts/measure_processes.py --name python --name obs-browser-page --seco
 
 ## 📄 License
 
-MIT。
+MIT。页面 favicon 使用 OBS Studio 官方 logo，按 GPL-2.0 单独分发；来源与许可说明见
+[src/obs_stage/static/assets/OBS-LOGO-NOTICE.md](src/obs_stage/static/assets/OBS-LOGO-NOTICE.md)。

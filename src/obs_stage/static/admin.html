@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>OBS Stage · 控制台</title>
-    <link rel="stylesheet" href="/static/admin.css?v=1600x900-2" />
+    <link rel="icon" type="image/svg+xml" href="/static/assets/obs-logo.svg" />
+    <link rel="stylesheet" href="/static/admin.css?v=1600x900-3" />
   </head>
   <body>
     <div class="shell">
@@ -125,11 +126,14 @@
           <section class="card">
             <div class="section-head"><div><p class="eyebrow">OBS SOURCE GUIDE</p><h2>内容源位置参考</h2></div></div>
             <div id="sourceGuide" class="source-guide"></div>
-            <div class="url-box"><code id="stageUrl"></code></div>
+            <div class="url-box">
+              <code id="stageUrl"></code>
+              <button id="copyUrlSideBtn" class="button secondary small" type="button">复制</button>
+            </div>
           </section>
         </aside>
       </main>
     </div>
-    <script type="module" src="/static/admin.js?v=1600x900-2"></script>
+    <script type="module" src="/static/admin.js?v=1600x900-3"></script>
   </body>
 </html>
