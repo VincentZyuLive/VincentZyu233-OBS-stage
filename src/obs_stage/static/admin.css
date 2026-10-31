@@ -175,3 +175,37 @@ input[type="range"] { width: 100%; accent-color: var(--primary); }
   .workspace { grid-template-columns: 1fr; }
   .preview-column { position: static; }
 }
+
+.github-repo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 11px;
+  border: 1px solid rgba(220, 235, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(7, 16, 28, 0.88);
+  color: #dcebff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 120ms ease, border-color 120ms ease;
+}
+
+.title-line {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  flex-wrap: wrap;
+}
+
+.github-repo-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(127, 168, 232, 0.7);
+}
+
+.github-repo-link svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
