@@ -1,0 +1,261 @@
+:root {
+  --vp-c-brand-1: #7fa8e8;
+  --vp-c-brand-2: #6f96d7;
+  --vp-c-brand-3: #587bb8;
+  --vp-c-bg: #08111f;
+  --vp-c-bg-alt: #0d192b;
+  --vp-c-bg-soft: #111f34;
+  --vp-c-text-1: #f4f7ff;
+  --vp-c-text-2: #b7c4d8;
+  --vp-c-divider: rgba(220, 235, 255, 0.12);
+  --vp-font-family-base: "LXGW WenKai Mono", "Microsoft YaHei UI", sans-serif;
+}
+
+body {
+  background-image:
+    radial-gradient(circle at 85% 8%, rgba(127, 168, 232, 0.14), transparent 28%),
+    radial-gradient(circle at 12% 90%, rgba(244, 198, 215, 0.08), transparent 25%);
+  background-attachment: fixed;
+}
+
+.VPNavBarTitle .title,
+.VPHero .name,
+.VPHero .text,
+h1,
+h2,
+h3 {
+  font-family: "LXGW WenKai Mono", "Microsoft YaHei UI", sans-serif;
+}
+
+.VPNavBarTitle .logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.VPHero .image-bg {
+  background: radial-gradient(circle, rgba(127, 168, 232, 0.32), transparent 68%);
+}
+
+.VPHero .image-src {
+  max-width: 210px;
+  max-height: 210px;
+  border-radius: 50%;
+  filter: drop-shadow(0 20px 42px rgba(0, 0, 0, 0.35));
+}
+
+.VPButton.brand {
+  border-color: transparent;
+  background: linear-gradient(135deg, #7fa8e8, #f4c6d7);
+  color: #07111f;
+}
+
+.bili-live-badge {
+  display: inline-block;
+  margin: 4px 0 16px;
+}
+
+.bili-live-badge img {
+  height: 32px;
+}
+
+.home-extra,
+.hardware-grid,
+.project-grid {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hardware-grid,
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.hardware-card,
+.project-card,
+.version-row {
+  border: 1px solid rgba(220, 235, 255, 0.13);
+  background: linear-gradient(145deg, rgba(17, 31, 52, 0.88), rgba(8, 17, 31, 0.9));
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.2);
+}
+
+.hardware-card {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.hardware-icon {
+  display: grid;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(127, 168, 232, 0.13);
+  font-size: 22px;
+}
+
+.hardware-label,
+.hardware-detail,
+.version-category {
+  margin: 0;
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+}
+
+.hardware-card h3 {
+  margin: 4px 0;
+  font-size: 18px;
+}
+
+.version-table {
+  display: grid;
+  gap: 12px;
+}
+
+.version-row {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
+  gap: 20px;
+  align-items: center;
+  padding: 16px 18px;
+  border-radius: 14px;
+}
+
+.version-row p {
+  margin: 0;
+  color: var(--vp-c-text-2);
+}
+
+.version-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.version-title code,
+.project-card code {
+  padding: 3px 7px;
+  border-radius: 7px;
+  background: rgba(220, 235, 255, 0.1);
+  color: #dcebff;
+}
+
+.project-card {
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.project-card > img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-bottom: 2px solid var(--project-accent);
+}
+
+.project-card-body {
+  padding: 18px;
+}
+
+.project-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.project-card-head h3 {
+  margin: 0;
+}
+
+.project-card-body > p {
+  color: var(--vp-c-text-2);
+}
+
+.project-card-body > a {
+  color: var(--project-accent);
+  font-weight: 700;
+}
+
+.project-tags {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.project-tags span {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(127, 168, 232, 0.11);
+  color: #b9d5ff;
+  font-size: 11px;
+}
+
+.layer-stack {
+  display: grid;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.layer-stack code {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(127, 168, 232, 0.08);
+  color: #c9ddff;
+  white-space: normal;
+}
+
+.live-room-card {
+  display: grid;
+  gap: 10px;
+  max-width: 520px;
+  margin-top: 24px;
+  padding: 24px;
+  border: 1px solid rgba(244, 198, 215, 0.32);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(127, 168, 232, 0.16), rgba(244, 198, 215, 0.08));
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
+}
+
+.live-room-card span {
+  color: var(--vp-c-text-2);
+  font-size: 13px;
+}
+
+.live-room-card strong {
+  font-size: 34px;
+  letter-spacing: 0.08em;
+}
+
+.live-room-card a {
+  color: #bfe0ff;
+  font-weight: 700;
+}
+
+.vp-doc table {
+  display: table;
+  width: 100%;
+}
+
+@media (max-width: 760px) {
+  .hardware-grid,
+  .project-grid {
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+  }
+
+  .version-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}

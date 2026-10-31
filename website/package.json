@@ -1,0 +1,13 @@
+{
+  "name": "vincentzyu-obs-stage-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev --port 16162",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview --port 16162"
+  },
+  "devDependencies": {
+    "vitepress": "1.6.4"
+  }
+}

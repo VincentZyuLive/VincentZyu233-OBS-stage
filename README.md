@@ -4,12 +4,20 @@
   <img src="src/obs_stage/static/assets/obs-stage-avatar.png" width="160" alt="OBS Stage logo">
 </p>
 
+<p align="center">
+  <a href="https://live.bilibili.com/5861873" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Bilibili-5861873-00A1D6?style=for-the-badge&logo=bilibili&logoColor=white" alt="Bilibili 直播间 5861873"></a>
+  <a href="https://vincentzyu233.github.io/VincentZyu233-OBS-stage/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Live_Environment-Pages-7FA8E8?style=for-the-badge&logo=githubpages&logoColor=white" alt="Live Environment Pages"></a>
+  <a href="https://github.com/VincentZyu233/VincentZyu233-OBS-stage" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+</p>
+
 给 OBS 直播间增加一套可编辑的水色雾蓝主题舞台。OBS 负责采集与合成，浏览器中的 WebUI 负责背景、圆角边框、头像徽章、标题和轻动态装饰。
 
 > [!TIP]
 > 当前是初版自用阶段，欢迎通过 Issue 或 PR 反馈问题、布局建议和主题需求。
 
 ## 🖼️ 预览
+
+在线环境站：https://vincentzyu233.github.io/VincentZyu233-OBS-stage/
 
 ### 🎛️ WebUI
 
@@ -109,6 +117,16 @@ uv run pytest -q
 ```bash
 uv run scripts/measure_processes.py --name python --name obs-browser-page --seconds 10
 ```
+
+VitePress 本地开发端口为 `16162`：
+
+```bash
+cd website
+npm install
+npm run docs:dev
+```
+
+访问：`http://127.0.0.1:16162/VincentZyu233-OBS-stage/`
 
 ## 📄 License
 

@@ -7,6 +7,11 @@ __pycache__/
 .coverage
 htmlcov/
 
+# VitePress
+website/node_modules/
+website/.vitepress/dist/
+website/.vitepress/cache/
+
 # Local configuration, uploaded avatar and generated stage assets
 .env
 runtime/
