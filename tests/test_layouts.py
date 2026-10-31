@@ -34,5 +34,6 @@ def test_full_screen_player_slot_aligns_with_capture_bottom() -> None:
     slots = default_layouts()[SceneId.FULL_SCREEN].slots
     capture = slots[0].rect
     media = slots[1].rect
-    assert (media.x, media.y, media.width, media.height, media.radius) == (475, 708, 583, 175, 22)
+    assert (media.x, media.y, media.width, media.height, media.radius) == (475, 708, 650, 175, 22)
+    assert media.x + media.width / 2 == 800
     assert capture.y + capture.height == media.y + media.height == 883
