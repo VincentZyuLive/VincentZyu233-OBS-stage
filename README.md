@@ -42,6 +42,10 @@ uv run obs-stage
 http://127.0.0.1:6162/admin
 ```
 
+### 🖥️ 桌面启动
+
+双击 `scripts/start-obs-stage.cmd` 即可检查并启动本地服务；如果服务已经运行，只会打开 WebUI。安装后的桌面快捷方式名为 `OBS Stage`，关闭控制台窗口即可停止服务。
+
 ## 🎛️ OBS 分层
 
 推荐每个场景按以下顺序叠加：
@@ -104,5 +108,5 @@ uv run scripts/measure_processes.py --name python --name obs-browser-page --seco
 
 ## 📄 License
 
-MIT。页面 favicon 使用 OBS Studio 官方 logo，按 GPL-2.0 单独分发；来源与许可说明见
+MIT。页面与桌面快捷方式使用“OBS Studio logo + VincentZyu233 GitHub 头像”组合图标；其中 OBS logo 派生资源按 GPL-2.0 单独分发，来源与许可说明见
 [src/obs_stage/static/assets/OBS-LOGO-NOTICE.md](src/obs_stage/static/assets/OBS-LOGO-NOTICE.md)。

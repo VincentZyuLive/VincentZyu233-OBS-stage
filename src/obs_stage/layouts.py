@@ -24,13 +24,13 @@ def default_layouts() -> dict[SceneId, SceneLayout]:
                 StageSlot(
                     name="capture",
                     label="显示器采集",
-                    rect=Rect(x=400, y=80, width=800, height=450, radius=32),
+                    rect=Rect(x=360, y=60, width=880, height=495, radius=35),
                     placeholder="显示器采集",
                 ),
                 StageSlot(
                     name="media",
                     label="SPlayer / 播放器",
-                    rect=Rect(x=442, y=550, width=683, height=204, radius=25),
+                    rect=Rect(x=470, y=585, width=660, height=197, radius=24),
                     placeholder="SPlayer 内容槽",
                 ),
             ],
