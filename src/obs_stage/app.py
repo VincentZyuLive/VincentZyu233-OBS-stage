@@ -88,7 +88,12 @@ def create_app(runtime: Runtime) -> FastAPI:
         target = (root / path).resolve()
         if not target.is_relative_to(root) or not target.is_file():
             raise HTTPException(status_code=404)
-        return FileResponse(target)
+        cache = (
+            "public, max-age=31536000, immutable"
+            if target.suffix.lower() in {".ttf", ".otf", ".woff", ".woff2"}
+            else "no-cache"
+        )
+        return FileResponse(target, headers={"Cache-Control": cache})
 
     @app.get("/api/config")
     async def get_config() -> dict[str, Any]:
