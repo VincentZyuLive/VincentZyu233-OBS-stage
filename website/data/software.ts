@@ -15,6 +15,7 @@ export const software: SoftwareItem[] = [
     version: "1.2.0",
     category: "播放器",
     note: "直播中的歌曲信息、封面和歌词视觉来源。",
+    url: "https://github.com/SPlayer-Dev/SPlayer-Next",
   },
   {
     name: "uv",
@@ -56,5 +57,6 @@ export const software: SoftwareItem[] = [
     version: "1.24.12741",
     category: "终端",
     note: "PowerShell 5.1 与本地开发工具的日常入口。",
+    url: "https://github.com/microsoft/terminal",
   },
 ];

@@ -20,7 +20,7 @@ export default defineConfig({
   ],
   themeConfig: {
     logo: {
-      src: `${base}brand/obs-stage-avatar.png`,
+      src: "/brand/obs-stage-avatar.png",
       alt: "VincentZyu Live Lab",
     },
     nav: [

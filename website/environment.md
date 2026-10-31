@@ -5,7 +5,6 @@ description: VincentZyu 的直播电脑硬件与系统配置
 
 <script setup>
 import {
-  diskSummary,
   environmentNotes,
   environmentUpdatedAt,
   hardware,
@@ -28,19 +27,6 @@ import {
     :detail="item.detail"
   />
 </div>
-
-## 💽 磁盘布局
-
-<table>
-  <thead><tr><th>盘符</th><th>容量</th><th>用途</th></tr></thead>
-  <tbody>
-    <tr v-for="item in diskSummary" :key="item.drive">
-      <td>{{ item.drive }}</td>
-      <td>{{ item.capacity }}</td>
-      <td>{{ item.role }}</td>
-    </tr>
-  </tbody>
-</table>
 
 ## 🔐 展示边界
 

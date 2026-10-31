@@ -40,15 +40,6 @@ export const hardware: HardwareSpec[] = [
   },
 ];
 
-export const diskSummary = [
-  { drive: "C:", capacity: "236.44 GiB", role: "系统盘" },
-  { drive: "D:", capacity: "465.76 GiB", role: "软件与工作区" },
-  { drive: "E:", capacity: "476.92 GiB", role: "素材与工具" },
-  { drive: "G:", capacity: "953.85 GiB", role: "大容量数据" },
-  { drive: "X:", capacity: "465.75 GiB", role: "扩展存储" },
-  { drive: "Y:", capacity: "298.09 GiB", role: "扩展存储" },
-];
-
 export const environmentNotes = [
   "桌面使用 3440×1440、144 Hz 超宽屏，直播画布保持 1920×1080 或 1600×900 的 16:9 输出。",
   "机器同时安装 Parsec、ToDesk、Oray、GameViewer 和 MuMu 的虚拟显示适配器，用于远程访问与模拟器场景。",
