@@ -48,7 +48,7 @@ def default_layouts() -> dict[SceneId, SceneLayout]:
                 StageSlot(
                     name="media",
                     label="SPlayer / 悬浮播放器",
-                    rect=Rect(x=475, y=658, width=583, height=175, radius=22),
+                    rect=Rect(x=475, y=708, width=583, height=175, radius=22),
                     placeholder="SPlayer 悬浮卡",
                 ),
             ],
