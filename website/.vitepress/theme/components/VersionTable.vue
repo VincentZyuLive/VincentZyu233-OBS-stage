@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { SoftwareItem } from "../../data/types.ts";
+import type { SoftwareItem } from "../../../data/types.ts";
 
 defineProps<{ items: SoftwareItem[] }>();
 </script>

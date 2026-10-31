@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { liveRoom } from "../../data/projects.ts";
+import { liveRoom } from "../../../data/projects.ts";
 </script>
 
 <template>

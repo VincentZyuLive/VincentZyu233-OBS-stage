@@ -9,7 +9,7 @@ import {
   environmentNotes,
   environmentUpdatedAt,
   hardware,
-} from './.vitepress/data/environment.ts'
+} from './data/environment.ts'
 </script>
 
 # 🖥️ 本机环境

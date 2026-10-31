@@ -4,7 +4,7 @@ description: OBS Stage 与 Bili Live Danmaku
 ---
 
 <script setup>
-import { projects } from '../.vitepress/data/projects.ts'
+import { projects } from '../data/projects.ts'
 </script>
 
 # 📦 项目

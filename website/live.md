@@ -4,7 +4,7 @@ description: VincentZyu 的 Bilibili 直播入口
 ---
 
 <script setup>
-import { liveRoom } from './.vitepress/data/projects.ts'
+import { liveRoom } from './data/projects.ts'
 </script>
 
 # 📺 B站直播间
