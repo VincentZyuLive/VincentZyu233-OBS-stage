@@ -7,13 +7,14 @@
 <p align="center">
   <a href="https://live.bilibili.com/5861873" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Bilibili-5861873-00A1D6?style=for-the-badge&logo=bilibili&logoColor=white" alt="Bilibili 直播间 5861873"></a>
   <a href="https://vincentzyu233.github.io/VincentZyu233-OBS-stage/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Live_Environment-Pages-7FA8E8?style=for-the-badge&logo=githubpages&logoColor=white" alt="Live Environment Pages"></a>
-  <a href="https://github.com/VincentZyu233/VincentZyu233-OBS-stage" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+  <a href="https://github.com/VincentZyuLive/VincentZyu233-OBS-stage" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
 </p>
 
 给 OBS 直播间增加一套可编辑的水色雾蓝主题舞台。OBS 负责采集与合成，浏览器中的 WebUI 负责背景、圆角边框、头像徽章、标题和轻动态装饰。
 
 > [!TIP]
-> 当前是初版自用阶段，欢迎通过 Issue 或 PR 反馈问题、布局建议和主题需求。
+> 这是 VincentZyu 的自用版本，主要服务个人直播舞台与 OBS 环境。项目会按实际使用需求持续迭代，也欢迎体验、提交 Issue 或 PR。
+> 组织主页：[VincentZyuLive](https://github.com/VincentZyuLive)
 
 ## 🖼️ 预览
 

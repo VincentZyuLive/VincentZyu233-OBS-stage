@@ -5,7 +5,7 @@ export const projects: ProjectCardData[] = [
     name: "OBS Stage",
     version: "0.1.0",
     description: "可编辑的水色雾蓝舞台背景、前景装饰与 OBS WebSocket 管理工具。",
-    repo: "https://github.com/VincentZyu233/VincentZyu233-OBS-stage",
+    repo: "https://github.com/VincentZyuLive/VincentZyu233-OBS-stage",
     preview: "/images/preview.webui.png",
     accent: "#7FA8E8",
     tags: ["OBS", "WebUI", "Watercolor"],
