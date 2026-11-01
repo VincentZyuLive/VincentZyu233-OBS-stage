@@ -34,7 +34,7 @@ HTTP 与 WebSocket 共用 `14558` 端口。服务默认只监听本机，不开�
 
 ## 🔗 相关链接
 
-- [go-musicfox fork 仓库](https://github.com/VincentZyu233/go-musicfox-vincentzyu-fork)
+- [go-musicfox fork 仓库](https://github.com/VincentZyuLive/go-musicfox-vincentzyu-fork)
 - [上游 go-musicfox](https://github.com/go-musicfox/go-musicfox)
 - [上游 PR #690](https://github.com/go-musicfox/go-musicfox/pull/690)
 - [SPlayer OBS HTML Overlay 项目页](/projects/splayer-obs-html-overlay)

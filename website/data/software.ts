@@ -22,7 +22,7 @@ export const software: SoftwareItem[] = [
     version: "5.1.0-fork",
     category: "播放器",
     note: "个人维护的 Go CLI 播放器，提供 SPlayer-Next 兼容的 HTTP/WS API 与 OBS 歌曲 Overlay 数据。",
-    url: "https://github.com/VincentZyu233/go-musicfox-vincentzyu-fork",
+    url: "https://github.com/VincentZyuLive/go-musicfox-vincentzyu-fork",
   },
   {
     name: "uv",

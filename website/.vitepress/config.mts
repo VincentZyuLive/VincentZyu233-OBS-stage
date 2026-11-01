@@ -1,7 +1,7 @@
 import { defineConfig } from "vitepress";
 
 const base = "/VincentZyu233-OBS-stage/";
-const repo = "https://github.com/VincentZyu233/VincentZyu233-OBS-stage";
+const repo = "https://github.com/VincentZyuLive/VincentZyu233-OBS-stage";
 const live = "https://live.bilibili.com/5861873";
 
 export default defineConfig({
@@ -12,7 +12,7 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
   sitemap: {
-    hostname: "https://vincentzyu233.github.io",
+    hostname: "https://vincentzyulive.github.io",
   },
   head: [
     ["link", { rel: "icon", type: "image/png", href: `${base}brand/obs-stage-avatar.png` }],

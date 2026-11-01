@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://live.bilibili.com/5861873" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Bilibili-5861873-00A1D6?style=for-the-badge&logo=bilibili&logoColor=white" alt="Bilibili 直播间 5861873"></a>
-  <a href="https://vincentzyu233.github.io/VincentZyu233-OBS-stage/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Live_Environment-Pages-7FA8E8?style=for-the-badge&logo=githubpages&logoColor=white" alt="Live Environment Pages"></a>
+  <a href="https://vincentzyulive.github.io/VincentZyu233-OBS-stage/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Live_Environment-Pages-7FA8E8?style=for-the-badge&logo=githubpages&logoColor=white" alt="Live Environment Pages"></a>
   <a href="https://github.com/VincentZyuLive/VincentZyu233-OBS-stage" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
 </p>
 
@@ -18,7 +18,7 @@
 
 ## 🖼️ 预览
 
-在线环境站：https://vincentzyu233.github.io/VincentZyu233-OBS-stage/
+在线环境站：https://vincentzyulive.github.io/VincentZyu233-OBS-stage/
 
 ### 🎛️ WebUI
 

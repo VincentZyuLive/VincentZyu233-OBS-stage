@@ -28,4 +28,4 @@ go-musicfox 提供 SPlayer-Next 兼容歌曲数据，SPlayer OBS HTML Overlay �
 [查看 SPlayer OBS HTML Overlay →](/projects/splayer-obs-html-overlay)
 [查看 go-musicfox (VincentZyu Fork) →](/projects/musicfox)
 
-[查看 Bili Live Danmaku GitHub 仓库](https://github.com/VincentZyu233/bili-live-danmaku)
+[查看 Bili Live Danmaku GitHub 仓库](https://github.com/VincentZyuLive/bili-live-danmaku)
