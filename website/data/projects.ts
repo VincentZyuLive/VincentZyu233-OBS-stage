@@ -1,4 +1,7 @@
 import type { ProjectCardData } from "./types";
+import githubTopicsJson from "./github-topics.json";
+
+const githubTopics = githubTopicsJson as Record<string, string[]>;
 
 export const projects: ProjectCardData[] = [
   {
@@ -8,7 +11,7 @@ export const projects: ProjectCardData[] = [
     repo: "https://github.com/VincentZyuLive/VincentZyu233-OBS-stage",
     preview: "/images/preview.webui.png",
     accent: "#7FA8E8",
-    tags: ["OBS", "WebUI", "Watercolor"],
+    topics: githubTopics["VincentZyuLive/VincentZyu233-OBS-stage"] ?? [],
   },
   {
     name: "SPlayer OBS HTML Overlay",
@@ -17,7 +20,7 @@ export const projects: ProjectCardData[] = [
     repo: "https://github.com/VincentZyuLive/splayer-status-html-overlay-for-obs",
     preview: "/images/preview.splayer-obs-html-overlay.card.png",
     accent: "#A7C8FF",
-    tags: ["OBS", "HTML", "Lyrics", "WebSocket"],
+    topics: githubTopics["VincentZyuLive/splayer-status-html-overlay-for-obs"] ?? [],
   },
   {
     name: "go-musicfox (VincentZyu Fork)",
@@ -26,7 +29,7 @@ export const projects: ProjectCardData[] = [
     repo: "https://github.com/VincentZyuLive/go-musicfox-vincentzyu-fork",
     preview: "/images/preview.musicfox.card.png",
     accent: "#E36229",
-    tags: ["Go", "CLI", "OBS", "WebSocket"],
+    topics: githubTopics["VincentZyuLive/go-musicfox-vincentzyu-fork"] ?? [],
   },
   {
     name: "Bili Live Danmaku",
@@ -35,7 +38,7 @@ export const projects: ProjectCardData[] = [
     repo: "https://github.com/VincentZyuLive/bili-live-danmaku",
     preview: "/images/preview.bili-live-danmaku.png",
     accent: "#F4C6D7",
-    tags: ["Bilibili", "Danmaku", "Obs"],
+    topics: githubTopics["VincentZyuLive/bili-live-danmaku"] ?? [],
   },
 ];
 

@@ -37,5 +37,5 @@ export interface ProjectCardData {
   repo: string;
   preview: string;
   accent: string;
-  tags: string[];
+  topics: string[];
 }

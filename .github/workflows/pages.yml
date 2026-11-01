@@ -8,6 +8,8 @@ on:
       - ".github/workflows/pages.yml"
       - "README.md"
   workflow_dispatch:
+  schedule:
+    - cron: "17 4 * * *"
 
 permissions:
   contents: read
@@ -33,6 +35,8 @@ jobs:
         run: npm ci
       - name: Build
         working-directory: website
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run docs:build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

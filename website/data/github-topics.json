@@ -1,0 +1,57 @@
+{
+  "VincentZyuLive/VincentZyu233-OBS-stage": [
+    "browser-source",
+    "obs",
+    "overlay",
+    "python",
+    "stage",
+    "streaming",
+    "github-pages",
+    "live-setup",
+    "vitepress",
+    "layout",
+    "live-streaming",
+    "obs-browser-source",
+    "obs-websocket",
+    "vite",
+    "webui"
+  ],
+  "VincentZyuLive/splayer-status-html-overlay-for-obs": [
+    "html",
+    "javascript",
+    "lyrics",
+    "music",
+    "obs",
+    "obs-browser-source",
+    "overlay",
+    "splayer-next",
+    "streaming",
+    "websocket"
+  ],
+  "VincentZyuLive/go-musicfox-vincentzyu-fork": [
+    "cli",
+    "go",
+    "http-api",
+    "music-player",
+    "musicfox",
+    "netease-cloud-music",
+    "obs",
+    "splayer-next",
+    "streaming",
+    "websocket"
+  ],
+  "VincentZyuLive/bili-live-danmaku": [
+    "bilibili",
+    "danmaku",
+    "obs",
+    "overlay",
+    "python",
+    "uv",
+    "windows",
+    "cookie",
+    "edge-tts",
+    "live-streaming",
+    "obs-browser-source",
+    "webui"
+  ]
+}

@@ -3,8 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "docs:dev": "vitepress dev --port 16162",
-    "docs:build": "vitepress build",
+    "sync:github-topics": "node scripts/sync-github-topics.mjs",
+    "docs:dev": "npm run sync:github-topics && vitepress dev --port 16162",
+    "docs:build": "npm run sync:github-topics && vitepress build",
     "docs:preview": "vitepress preview --port 16162"
   },
   "devDependencies": {
