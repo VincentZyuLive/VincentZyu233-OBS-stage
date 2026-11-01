@@ -24,6 +24,10 @@
 
 ![OBS Stage WebUI](docs/images/preview.webui.png)
 
+### 🖥️ 直播画面
+
+![OBS Stage 直播画面效果](docs/images/preview.stream-only.png)
+
 ### 🎬 OBS 半屏实机
 
 ![OBS Stage 在 OBS 中的半屏效果](docs/images/preview.obs.png)
