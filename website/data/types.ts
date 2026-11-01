@@ -13,11 +13,21 @@ export interface SoftwareItem {
   url?: string;
 }
 
+export interface ObsLayerSegment {
+  text: string;
+  url?: string;
+}
+
+export interface ObsLayerItem {
+  segments: ObsLayerSegment[];
+}
+
 export interface ObsPlugin {
   name: string;
   version: string;
   source: "OBS 内置" | "第三方" | "OBS 生态";
   purpose: string;
+  url?: string;
 }
 
 export interface ProjectCardData {
