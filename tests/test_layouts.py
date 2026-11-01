@@ -25,9 +25,9 @@ def test_half_screen_emphasizes_capture_area() -> None:
     slots = default_layouts()[SceneId.HALF_SCREEN].slots
     capture = slots[0].rect
     media = slots[1].rect
-    assert (capture.x, capture.y, capture.width, capture.height) == (360, 60, 1160, 605)
+    assert (capture.x, capture.y, capture.width, capture.height) == (360, 60, 1200, 605)
     assert (media.x, media.y, media.width, media.height) == (500, 700, 600, 150)
-    assert capture.x + capture.width == 1520
+    assert capture.x + capture.width == 1560
     assert capture.y + capture.height == 665
     assert capture.y + capture.height < media.y
     assert media.x + media.width / 2 == 800

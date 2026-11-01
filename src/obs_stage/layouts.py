@@ -24,7 +24,7 @@ def default_layouts() -> dict[SceneId, SceneLayout]:
                 StageSlot(
                     name="capture",
                     label="显示器采集",
-                    rect=Rect(x=360, y=60, width=1160, height=605, radius=35),
+                    rect=Rect(x=360, y=60, width=1200, height=605, radius=35),
                     placeholder="显示器采集",
                 ),
                 StageSlot(
