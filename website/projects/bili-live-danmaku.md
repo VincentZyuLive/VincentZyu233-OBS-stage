@@ -18,7 +18,7 @@ Bili Live Danmaku 是直播中的透明弹幕面板，负责把 B站直播事件
 
 <BilibiliBadge />
 
-![Bili Live Danmaku 在 OBS 中的效果](/images/preview.obs.png)
+![Bili Live Danmaku 在 OBS 中的效果](/images/preview.bili-live-danmaku.png)
 
 ## 🎵 相关歌曲视觉链路
 

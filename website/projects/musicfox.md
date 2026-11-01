@@ -38,5 +38,5 @@ HTTP 与 WebSocket 共用 `14558` 端口。服务默认只监听本机，不开�
 - [上游 go-musicfox](https://github.com/go-musicfox/go-musicfox)
 - [上游 PR #690](https://github.com/go-musicfox/go-musicfox/pull/690)
 - [SPlayer OBS HTML Overlay 项目页](/projects/splayer-obs-html-overlay)
-- [SPlayer-Next OBS Overlay](https://github.com/VincentZyu233/splayer-status-html-overlay-for-obs)
+- [SPlayer-Next OBS Overlay](https://github.com/VincentZyuLive/splayer-status-html-overlay-for-obs)
 

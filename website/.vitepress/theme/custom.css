@@ -8,7 +8,7 @@
   --vp-c-text-1: #f4f7ff;
   --vp-c-text-2: #b7c4d8;
   --vp-c-divider: rgba(220, 235, 255, 0.12);
-  --vp-font-family-base: "LXGW WenKai Mono", "Microsoft YaHei UI", sans-serif;
+  --vp-font-family-base: "LXGW WenKai", "Microsoft YaHei UI", sans-serif;
 }
 
 body {
@@ -24,7 +24,7 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "LXGW WenKai Mono", "Microsoft YaHei UI", sans-serif;
+  font-family: "LXGW WenKai", "Microsoft YaHei UI", sans-serif;
 }
 
 .VPNavBarTitle .logo {

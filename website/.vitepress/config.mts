@@ -1,10 +1,10 @@
-import { defineConfig } from "vitepress";
+import { withMermaid } from "vitepress-plugin-mermaid";
 
 const base = "/VincentZyu233-OBS-stage/";
 const repo = "https://github.com/VincentZyuLive/VincentZyu233-OBS-stage";
 const live = "https://live.bilibili.com/5861873";
 
-export default defineConfig({
+export default withMermaid({
   lang: "zh-CN",
   title: "VincentZyu Live Lab",
   description: "VincentZyu 的直播环境、OBS 舞台与 B站弹幕工具展示",
@@ -13,6 +13,19 @@ export default defineConfig({
   lastUpdated: true,
   sitemap: {
     hostname: "https://vincentzyulive.github.io",
+  },
+  mermaid: {
+    theme: "base",
+    themeVariables: {
+      background: "#08111f",
+      primaryColor: "#14243b",
+      primaryTextColor: "#f4f7ff",
+      primaryBorderColor: "#7fa8e8",
+      lineColor: "#7fa8e8",
+      secondaryColor: "#101c30",
+      tertiaryColor: "#0d192b",
+      fontFamily: "'LXGW WenKai', 'Microsoft YaHei UI', sans-serif",
+    },
   },
   head: [
     ["link", { rel: "icon", type: "image/png", href: `${base}brand/obs-stage-avatar.png` }],

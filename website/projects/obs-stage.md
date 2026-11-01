@@ -18,9 +18,13 @@ OBS Stage 负责水色雾蓝舞台背景、圆角内容槽、前景装饰、头�
 
 <BilibiliBadge />
 
+## 🖼️ 效果预览
+
 ![OBS Stage WebUI](/images/preview.webui.png)
 
-## 📺 B站直播姬实机
+![OBS Stage 直播画面效果](/images/preview.stream-only.png)
+
+![OBS Stage 在 OBS 中的半屏效果](/images/preview.obs-stage.png)
 
 ![OBS Stage 在 B站直播姬中的效果](/images/preview.bili-livehime.png)
 

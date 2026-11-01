@@ -5,6 +5,7 @@ import BilibiliBadge from "./components/BilibiliBadge.vue";
 import HardwareCard from "./components/HardwareCard.vue";
 import ProjectCard from "./components/ProjectCard.vue";
 import VersionTable from "./components/VersionTable.vue";
+import "@free-fonts/lxgw-wenkai/lxgw-wenkai.css";
 import "./custom.css";
 
 export default {

@@ -22,8 +22,17 @@ SPlayer OBS HTML Overlay 是一个直接运行在 OBS Browser Source 中的透�
 
 ## 🔌 OBS 数据链路
 
-```text
-go-musicfox / SPlayer-Next → HTTP / WebSocket :14558 → index.html → OBS Browser Source
+```mermaid
+flowchart LR
+  A["go-musicfox / SPlayer-Next"] -->|"HTTP / WebSocket :14558"| B["index.html"]
+  B --> C["OBS Browser Source"]
+
+  classDef client fill:#14243b,stroke:#7fa8e8,color:#f4f7ff
+  classDef bridge fill:#101c30,stroke:#a7c8ff,color:#f4f7ff
+  classDef obs fill:#17253a,stroke:#f4c6d7,color:#f4f7ff
+  class A client
+  class B bridge
+  class C obs
 ```
 
 ## ⚙️ 快速配置
@@ -36,7 +45,15 @@ go-musicfox / SPlayer-Next → HTTP / WebSocket :14558 → index.html → OBS Br
 
 ## 🖼️ 预览
 
+> ↓ 透明浮层效果：独立展示歌曲封面、歌名、歌词、播放进度与时间。
+
+![透明浮层效果](/images/preview.splayer-obs-html-overlay.overlay-only.png)
+
+> ↓ OBS 端效果：浏览器源 `splayer-overlay` 叠加在 OBS 中的实际效果。
+
 ![SPlayer OBS HTML Overlay 在 OBS 中的效果](/images/preview.splayer-obs-html-overlay.png)
+
+> ↓ B站手机客户端效果：同一套歌词挂件在手机直播间的观看效果。
 
 ![SPlayer OBS HTML Overlay 在 B站手机端的观看效果](/images/preview.splayer-obs-html-overlay.phone.png)
 
@@ -44,7 +61,7 @@ go-musicfox / SPlayer-Next → HTTP / WebSocket :14558 → index.html → OBS Br
 
 ## 🔗 相关链接
 
-- [SPlayer OBS HTML Overlay 仓库](https://github.com/VincentZyu233/splayer-status-html-overlay-for-obs)
+- [SPlayer OBS HTML Overlay 仓库](https://github.com/VincentZyuLive/splayer-status-html-overlay-for-obs)
 - [go-musicfox (VincentZyu Fork) 项目页](/projects/musicfox)
 - [SPlayer-Next](https://github.com/SPlayer-Dev/SPlayer-Next)
 - [LXGW WenKai](https://github.com/lxgw/LxgwWenKai)
