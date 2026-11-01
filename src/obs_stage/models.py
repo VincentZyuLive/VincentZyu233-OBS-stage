@@ -42,7 +42,7 @@ class ThemeConfig(BaseModel):
 
 class Branding(BaseModel):
     title: str = "VincentZyu"
-    subtitle: str = "WATERCOLOR LIVE STAGE"
+    subtitle: str = "点点关注点点三连谢谢喵Thanks♪(･ω･)ﾉ"
     show_avatar: bool = True
     show_clock: bool = True
     show_scene_label: bool = True
