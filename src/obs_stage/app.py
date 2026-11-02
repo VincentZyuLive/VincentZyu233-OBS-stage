@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Annotated, Any
 
 from fastapi import FastAPI, File, HTTPException, UploadFile, WebSocket, WebSocketDisconnect
-from fastapi.responses import FileResponse, RedirectResponse
+from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse
 
 from .bili_status import BilibiliStatusService
 from .config import ConfigStore
@@ -73,19 +73,31 @@ def create_app(runtime: Runtime) -> FastAPI:
     app = FastAPI(title="OBS Stage", lifespan=lifespan)
     app.state.runtime = runtime
 
+    def render_shell(filename: str) -> HTMLResponse:
+        html = (STATIC_DIR / filename).read_text(encoding="utf-8")
+        version = (
+            str(time.time_ns() // 1_000_000)
+            if runtime.config.assets.cache_bust
+            else "stable"
+        )
+        return HTMLResponse(
+            html.replace("__ASSET_VERSION__", version),
+            headers={"Cache-Control": "no-store"},
+        )
+
     @app.get("/", include_in_schema=False)
     async def index() -> RedirectResponse:
         return RedirectResponse("/admin")
 
     @app.get("/admin", include_in_schema=False)
-    async def admin_page() -> FileResponse:
-        return FileResponse(STATIC_DIR / "admin.html", headers={"Cache-Control": "no-store"})
+    async def admin_page() -> HTMLResponse:
+        return render_shell("admin.html")
 
     @app.get("/stage/{scene}", include_in_schema=False)
-    async def stage_page(scene: SceneId) -> FileResponse:
+    async def stage_page(scene: SceneId) -> HTMLResponse:
         if scene not in runtime.config.layouts:
             raise HTTPException(status_code=404, detail="未知场景")
-        return FileResponse(STATIC_DIR / "stage.html", headers={"Cache-Control": "no-store"})
+        return render_shell("stage.html")
 
     @app.get("/static/{path:path}", include_in_schema=False)
     async def static_file(path: str) -> FileResponse:

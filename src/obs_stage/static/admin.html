@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>OBS Stage · 控制台</title>
     <link rel="icon" type="image/png" href="/static/assets/obs-stage-avatar.png" />
-    <link rel="stylesheet" href="/static/admin.css?v=hud-modes-1" />
+    <link rel="stylesheet" href="/static/admin.css?v=__ASSET_VERSION__" />
   </head>
   <body>
     <div class="shell">
@@ -116,6 +116,12 @@
           </section>
 
           <section class="card">
+            <div class="section-head"><div><p class="eyebrow">ASSETS</p><h2>资源缓存</h2></div></div>
+            <label class="switch-row"><input data-bind="assets.cache_bust" type="checkbox" /><span>每次加载使用新的资源版本</span></label>
+            <p class="hint">开启后 CSS/JS 会带 Unix 毫秒版本参数，避免 OBS Browser Source 继续使用旧缓存。</p>
+          </section>
+
+          <section class="card">
             <div class="section-head"><div><p class="eyebrow">OBS WEBSOCKET</p><h2>可选 OBS 集成</h2></div></div>
             <p class="hint">仅管理舞台背景和前景源，不会移动现有采集、播放器或弹幕。密码只保存在当前页面内存。</p>
             <div class="inline-fields two">
@@ -161,6 +167,6 @@
         </aside>
       </main>
     </div>
-    <script type="module" src="/static/admin.js?v=hud-modes-1"></script>
+    <script type="module" src="/static/admin.js?v=__ASSET_VERSION__"></script>
   </body>
 </html>
