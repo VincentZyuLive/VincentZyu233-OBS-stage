@@ -78,12 +78,17 @@ class LiveStatusConfig(BaseModel):
     refresh_seconds: int = Field(default=10, ge=5, le=60)
 
 
+class AssetSettings(BaseModel):
+    cache_bust: bool = True
+
+
 class AppConfig(BaseModel):
     theme: ThemeConfig = Field(default_factory=ThemeConfig)
     branding: Branding = Field(default_factory=Branding)
     layouts: dict[SceneId, SceneLayout]
     obs: ObsConnectionConfig = Field(default_factory=ObsConnectionConfig)
     status: LiveStatusConfig = Field(default_factory=LiveStatusConfig)
+    assets: AssetSettings = Field(default_factory=AssetSettings)
 
 
 class ObsRequest(BaseModel):

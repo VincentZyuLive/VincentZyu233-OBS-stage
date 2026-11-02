@@ -161,6 +161,10 @@ body {
   bottom: 90px;
 }
 
+.stage[data-scene="full-screen"]:not([data-hud="top"]) .brand {
+  top: 111px;
+}
+
 .avatar-wrap {
   width: 108px;
   height: 108px;
@@ -228,9 +232,17 @@ body {
   top: 48px;
   left: 50%;
   transform: translateX(-50%);
+  padding: 7px 16px;
+  border: 1px solid color-mix(in srgb, var(--primary) 28%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 67%, transparent);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
   color: color-mix(in srgb, var(--cream) 80%, transparent);
   font-size: 24px;
+  font-variant-numeric: tabular-nums;
   letter-spacing: 0.12em;
+  white-space: nowrap;
 }
 
 .edge-line {

@@ -48,6 +48,7 @@
 - 可选 OBS WebSocket：测试连接、抓取真实场景截图、一键创建或更新舞台层
 - 一键套用只管理 `Stage BG` 和 `Stage Frame`，不移动现有采集、播放器或弹幕
 - 背景为静态 PNG，前景为轻量 Browser Source；场景隐藏时可关闭浏览器源
+- 资源版本可配置：默认每次加载生成新的 Unix 毫秒版本，避免 OBS 继续使用旧 CSS/JS 缓存
 - 配置、头像和导出背景存放在应用数据目录，不进入 Git
 
 ## 🚀 启动
@@ -153,6 +154,10 @@ Windows 默认：
 ```
 
 macOS 与 Linux 使用各自的平台应用数据目录。可用 `--data-dir` 覆盖。
+
+## 🧩 资源缓存
+
+`config.json` 中的 `assets.cache_bust` 默认开启。开启时，Stage 与 Admin 的 CSS/JS URL 会在每次页面请求时带上当前 Unix 毫秒版本参数，避免 OBS Browser Source 继续使用旧缓存；关闭后使用固定的 `v=stable` 版本，允许正常缓存。
 
 ## 🛠️ 开发
 

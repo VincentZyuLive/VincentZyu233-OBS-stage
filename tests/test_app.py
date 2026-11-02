@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from io import BytesIO
 from pathlib import Path
 
@@ -50,6 +51,23 @@ def test_pages_config_background_and_avatar(tmp_path: Path) -> None:
         assert restored.status_code == 200
         assert restored.headers["content-type"] == "image/png"
         assert restored.content.startswith(b"\x89PNG")
+        stage_html = client.get("/stage/full-screen").text
+        assert "__ASSET_VERSION__" not in stage_html
+        assert re.search(r"/static/stage\.css\?v=\d+", stage_html)
+        admin_html = client.get("/admin").text
+        assert "__ASSET_VERSION__" not in admin_html
+        assert re.search(r"/static/admin\.css\?v=\d+", admin_html)
+
+
+def test_asset_cache_can_be_disabled(tmp_path: Path) -> None:
+    runtime = Runtime(ConfigStore(tmp_path), 6162)
+    runtime.config.assets.cache_bust = False
+    app = create_app(runtime)
+    with TestClient(app) as client:
+        stage_html = client.get("/stage/full-screen").text
+        admin_html = client.get("/admin").text
+        assert "stage.css?v=stable" in stage_html
+        assert "admin.css?v=stable" in admin_html
 
 
 def test_config_can_be_updated(tmp_path: Path) -> None:
