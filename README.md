@@ -43,7 +43,7 @@
 - 内置 LXGW WenKai Mono Medium（SIL OFL 1.1），WebUI 和舞台默认统一使用霞鹜文楷
 - 支持上传头像并作为舞台品牌徽章
 - WebUI 提供 16:9 实时设计预览和内容源位置参考
-- 可选 B站状态 HUD：Scene URL 带 `?status=verbose` 时显示直播状态、标题、分区、人气和粉丝数
+- 可选 B站状态 HUD：通过 `?hud=corner|bottom|top|none` 选择左下角卡片、底部横条、顶部横条或不显示
 - 可选 OBS WebSocket：测试连接、抓取真实场景截图、一键创建或更新舞台层
 - 一键套用只管理 `Stage BG` 和 `Stage Frame`，不移动现有采集、播放器或弹幕
 - 背景为静态 PNG，前景为轻量 Browser Source；场景隐藏时可关闭浏览器源
@@ -64,9 +64,27 @@ uv run obs-stage
 http://127.0.0.1:6162/admin
 ```
 
-### 🖥️ 桌面启动
+### 🖥️ 启动脚本
 
-双击 `scripts/start-obs-stage.cmd` 即可检查并启动本地服务；如果服务已经运行，只会打开 WebUI。安装后的桌面快捷方式名为 `OBS Stage`，关闭控制台窗口即可停止服务。
+Windows 双击 `scripts/start-obs-stage.cmd` 即可检查并启动本地服务；Linux/macOS 使用：
+
+```bash
+./scripts/start-obs-stage.sh
+```
+
+脚本会先检查服务是否已经运行；已运行时只打开 WebUI，未运行时通过 `uv run obs-stage` 启动。安装后的 Windows 桌面快捷方式名为 `OBS Stage`，关闭终端或控制台窗口即可停止服务。
+
+启动参数会原样传给 `obs-stage`，并支持 `--port 7000` 或 `--port=7000` 动态调整健康检查和 Admin 地址：
+
+```powershell
+.\scripts\start-obs-stage.cmd --port 16162 --verbose
+```
+
+```bash
+./scripts/start-obs-stage.sh --data-dir "/path/to/data" --port 16162
+```
+
+脚本只额外解析 `--port`、`--no-browser`、`--help` 和 `--version`，其余参数全部原样交给 CLI。服务已运行时使用 `--no-browser` 会打印 Admin URL，而不是再次启动或打开页面。
 
 ## 🎛️ OBS 分层
 
@@ -97,13 +115,25 @@ http://127.0.0.1:6162/admin
 
 ## 📺 B站状态 HUD
 
-在任意场景地址后添加 `?status=verbose` 即可显示只读 B站状态：
+通过 Scene URL 的 `hud` 参数选择只读 B站状态 HUD 的位置：
+
+| `hud` 值 | 效果 |
+| --- | --- |
+| `corner` | 左下角卡片，显示完整 HUD |
+| `bottom` | 底部近满宽单行横条 |
+| `top` | 顶部近满宽单行横条，品牌和时钟自动下移避让 |
+| `none` | 不显示 HUD |
 
 ```text
-http://127.0.0.1:6162/stage/full-screen?status=verbose
+http://127.0.0.1:6162/stage/full-screen?hud=corner
+http://127.0.0.1:6162/stage/full-screen?hud=bottom
+http://127.0.0.1:6162/stage/full-screen?hud=top
+http://127.0.0.1:6162/stage/full-screen?hud=none
 ```
 
-HUD 显示直播状态、标题、分区、人气、粉丝数和更新时间，数据来自 B站公开房间接口。不带该参数时页面和以前完全一致，不创建 HUD、不请求状态接口。
+`bottom` 和 `top` 在 1600×900 下左右各保留 34px，宽度约 1532px，只占一行；`bottom` 模式会把右下场景标识移到横条上方。任意场景都可使用上述参数，只需替换 `/stage/full-screen` 中的场景名。
+
+HUD 显示直播状态、标题、分区、人气、粉丝数、开播时间和更新时间，数据来自 B站公开房间接口。不传 `hud`、传 `none` 或传非法值时都不会创建 HUD，也不会请求 `/api/live-status`。旧的 `?status=verbose` 已移除，不再兼容。
 
 ## 📁 布局
 

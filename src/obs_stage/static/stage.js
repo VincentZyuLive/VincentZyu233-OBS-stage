@@ -25,13 +25,16 @@ const statusUpdated = document.querySelector("#statusUpdated");
 const scene = location.pathname.split("/").filter(Boolean).pop() || "no-screen";
 const searchParams = new URLSearchParams(location.search);
 const isPreview = searchParams.get("preview") === "1";
-const isVerboseStatus = searchParams.get("status") === "verbose";
+const hudModes = new Set(["corner", "bottom", "top", "none"]);
+const requestedHudMode = searchParams.get("hud") || "none";
+const hudMode = hudModes.has(requestedHudMode) ? requestedHudMode : "none";
 let config = null;
 let avatarRevision = "none";
 let statusTimer = null;
 
 stage.dataset.scene = scene;
 stage.dataset.preview = String(isPreview);
+stage.dataset.hud = hudMode;
 
 function svgElement(tag, attributes = {}) {
   const element = document.createElementNS(SVG_NS, tag);
@@ -210,7 +213,7 @@ async function refreshBilibiliStatus() {
 function startStatusPolling() {
   window.clearInterval(statusTimer);
   statusTimer = null;
-  if (!isVerboseStatus) {
+  if (hudMode === "none") {
     statusHud.hidden = true;
     return;
   }

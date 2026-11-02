@@ -108,8 +108,11 @@ def create_app(runtime: Runtime) -> FastAPI:
             "stage_urls": {
                 scene.value: runtime.stage_url(scene) for scene in SceneId
             },
-            "verbose_stage_urls": {
-                scene.value: f"{runtime.stage_url(scene)}?status=verbose"
+            "hud_stage_urls": {
+                scene.value: {
+                    mode: f"{runtime.stage_url(scene)}?hud={mode}"
+                    for mode in ("corner", "bottom", "top", "none")
+                }
                 for scene in SceneId
             },
         }

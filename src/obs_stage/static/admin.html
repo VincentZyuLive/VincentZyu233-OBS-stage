@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>OBS Stage · 控制台</title>
     <link rel="icon" type="image/png" href="/static/assets/obs-stage-avatar.png" />
-    <link rel="stylesheet" href="/static/admin.css?v=1600x900-hud-1" />
+    <link rel="stylesheet" href="/static/admin.css?v=hud-modes-1" />
   </head>
   <body>
     <div class="shell">
@@ -44,12 +44,19 @@
 
           <section class="card">
             <div class="section-head"><div><p class="eyebrow">LIVE STATUS</p><h2>B站状态 HUD</h2></div></div>
-            <p class="hint">仅当 Scene URL 带 <code>?status=verbose</code> 时显示。数据来自 B站公开房间接口，不需要 Cookie。</p>
+            <p class="hint">通过 Scene URL 的 <code>hud</code> 参数选择位置：<code>corner</code>、<code>bottom</code>、<code>top</code> 或 <code>none</code>。数据来自 B站公开房间接口，不需要 Cookie。</p>
             <div class="inline-fields two">
               <label class="field"><span>直播间号</span><input data-bind="status.room_id" type="text" /></label>
               <label class="field"><span>刷新间隔（秒）</span><input data-bind="status.refresh_seconds" type="number" min="5" max="60" /></label>
             </div>
-            <label class="switch-row"><input id="statusPreviewToggle" type="checkbox" /><span>在预览中显示状态 HUD</span></label>
+            <label class="field"><span>HUD 位置</span>
+              <select id="statusPosition">
+                <option value="none">不显示</option>
+                <option value="corner">左下角卡片</option>
+                <option value="bottom">底部横条</option>
+                <option value="top">顶部横条</option>
+              </select>
+            </label>
             <div class="url-box">
               <code id="statusUrl"></code>
               <button id="copyStatusUrlBtn" class="button secondary small" type="button">复制状态地址</button>
@@ -154,6 +161,6 @@
         </aside>
       </main>
     </div>
-    <script type="module" src="/static/admin.js?v=1600x900-hud-1"></script>
+    <script type="module" src="/static/admin.js?v=hud-modes-1"></script>
   </body>
 </html>

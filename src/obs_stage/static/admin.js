@@ -11,7 +11,7 @@ const elements = {
   previewFrame: byId("previewFrame"),
   stageUrl: byId("stageUrl"),
   statusUrl: byId("statusUrl"),
-  statusPreviewToggle: byId("statusPreviewToggle"),
+  statusPosition: byId("statusPosition"),
   downloadBgBtn: byId("downloadBgBtn"),
   sourceGuide: byId("sourceGuide"),
   avatarFile: byId("avatarFile"),
@@ -25,7 +25,7 @@ const state = {
   avatarRevision: "none",
   activeScene: "full-screen",
   stageUrls: {},
-  verboseStageUrls: {},
+  hudStageUrls: {},
 };
 
 function getPath(object, path) {
@@ -119,12 +119,12 @@ function updateSceneUi() {
   for (const tab of elements.sceneTabs.querySelectorAll(".scene-tab")) {
     tab.classList.toggle("active", tab.dataset.scene === state.activeScene);
   }
-  const statusQuery = elements.statusPreviewToggle.checked ? "&status=verbose" : "";
-  elements.previewFrame.src = `/stage/${state.activeScene}?preview=1${statusQuery}`;
+  const hudPosition = elements.statusPosition.value || "none";
+  elements.previewFrame.src = `/stage/${state.activeScene}?preview=1&hud=${encodeURIComponent(hudPosition)}`;
   const stageUrl = state.stageUrls[state.activeScene] || `${location.origin}/stage/${state.activeScene}`;
-  const statusUrl = state.verboseStageUrls[state.activeScene] || `${stageUrl}?status=verbose`;
+  const hudUrl = state.hudStageUrls[state.activeScene]?.[hudPosition] || `${stageUrl}?hud=${encodeURIComponent(hudPosition)}`;
   elements.stageUrl.textContent = stageUrl;
-  elements.statusUrl.textContent = statusUrl;
+  elements.statusUrl.textContent = hudUrl;
   elements.downloadBgBtn.href = `/api/background/${state.activeScene}.png`;
   elements.downloadBgBtn.download = `obs-stage-${state.activeScene}-background.png`;
   elements.previewFrame.hidden = false;
@@ -235,7 +235,7 @@ async function boot() {
   state.config = data.config;
   state.avatarRevision = data.avatar_revision;
   state.stageUrls = data.stage_urls;
-  state.verboseStageUrls = data.verbose_stage_urls || {};
+  state.hudStageUrls = data.hud_stage_urls || {};
   fillForm();
   switchScene(state.activeScene);
 }
@@ -287,8 +287,8 @@ async function copyText(text, successMessage) {
 }
 byId("copyUrlBtn").addEventListener("click", () => copyText(elements.stageUrl.textContent, "OBS 舞台源地址已复制。"));
 byId("copyUrlSideBtn").addEventListener("click", () => copyText(elements.stageUrl.textContent, "OBS 舞台源地址已复制。"));
-byId("copyStatusUrlBtn").addEventListener("click", () => copyText(elements.statusUrl.textContent, "带状态 HUD 的舞台地址已复制。"));
-elements.statusPreviewToggle.addEventListener("change", updateSceneUi);
+byId("copyStatusUrlBtn").addEventListener("click", () => copyText(elements.statusUrl.textContent, "HUD 舞台地址已复制。"));
+elements.statusPosition.addEventListener("change", updateSceneUi);
 window.addEventListener("resize", resizePreview);
 
 boot().catch((error) => showNotice(`初始化失败：${error.message}`, true));

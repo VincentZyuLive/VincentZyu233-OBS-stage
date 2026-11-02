@@ -26,10 +26,13 @@ def test_pages_config_background_and_avatar(tmp_path: Path) -> None:
         assert client.get("/stage/unknown").status_code == 422
         config = client.get("/api/config").json()
         assert config["stage_urls"]["no-screen"] == "http://127.0.0.1:6162/stage/no-screen"
-        assert (
-            config["verbose_stage_urls"]["half-screen"]
-            == "http://127.0.0.1:6162/stage/half-screen?status=verbose"
-        )
+        for scene in ("no-screen", "half-screen", "full-screen"):
+            for mode in ("corner", "bottom", "top", "none"):
+                assert (
+                    config["hud_stage_urls"][scene][mode]
+                    == f"http://127.0.0.1:6162/stage/{scene}?hud={mode}"
+                )
+        assert "verbose_stage_urls" not in config
         response = client.get("/api/background/half-screen.png")
         assert response.status_code == 200
         assert response.headers["content-type"] == "image/png"
