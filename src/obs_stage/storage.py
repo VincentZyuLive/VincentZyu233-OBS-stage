@@ -9,6 +9,7 @@ from pathlib import Path
 from PIL import Image, ImageOps
 
 MAX_AVATAR_BYTES = 16 * 1024 * 1024
+DEFAULT_AVATAR_PATH = Path(__file__).parent / "static" / "assets" / "default-avatar.png"
 
 
 class AvatarStore:
@@ -16,6 +17,8 @@ class AvatarStore:
         self.directory = data_dir / "avatar"
         self.directory.mkdir(parents=True, exist_ok=True)
         self.path = self.directory / "avatar.png"
+        if not self.path.is_file():
+            self.reset()
 
     def save(self, data: bytes) -> Path:
         if not data:
@@ -46,11 +49,11 @@ class AvatarStore:
                 pass
         return self.path
 
+    def reset(self) -> Path:
+        return self.save(DEFAULT_AVATAR_PATH.read_bytes())
+
     def delete(self) -> None:
-        try:
-            self.path.unlink()
-        except FileNotFoundError:
-            pass
+        self.reset()
 
     def exists(self) -> bool:
         return self.path.is_file()

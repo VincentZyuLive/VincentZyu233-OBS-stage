@@ -183,10 +183,10 @@ async function uploadAvatar() {
 }
 
 async function deleteAvatar() {
-  await fetchJson("/api/avatar", { method: "DELETE" });
-  state.avatarRevision = "none";
+  const result = await fetchJson("/api/avatar", { method: "DELETE" });
+  state.avatarRevision = result.revision;
   sendPreview();
-  showNotice("头像已移除，舞台将使用默认占位图。");
+  showNotice("已恢复默认头像。");
 }
 
 async function testObs() {

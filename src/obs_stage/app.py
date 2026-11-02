@@ -148,12 +148,12 @@ def create_app(runtime: Runtime) -> FastAPI:
         return {"revision": runtime.avatar.revision()}
 
     @app.delete("/api/avatar")
-    async def delete_avatar() -> dict[str, bool]:
-        runtime.avatar.delete()
+    async def delete_avatar() -> dict[str, object]:
+        runtime.avatar.reset()
         await runtime.hub.broadcast(
             {"type": "config", "payload": runtime.config.model_dump(mode="json")}
         )
-        return {"ok": True}
+        return {"ok": True, "revision": runtime.avatar.revision()}
 
     @app.get("/api/background/{scene}.png", include_in_schema=False)
     async def background(scene: SceneId) -> FileResponse:
