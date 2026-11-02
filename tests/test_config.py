@@ -10,6 +10,8 @@ def test_default_config_has_three_scenes() -> None:
     config = default_config()
     assert set(config.layouts) == set(SceneId)
     assert config.theme.preset == "mizuiro"
+    assert config.status.room_id == "5861873"
+    assert config.status.refresh_seconds == 10
 
 
 def test_config_round_trip(tmp_path: Path) -> None:

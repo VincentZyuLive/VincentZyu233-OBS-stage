@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://live.bilibili.com/5861873" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Bilibili-5861873-00A1D6?style=for-the-badge&logo=bilibili&logoColor=white" alt="Bilibili 直播间 5861873"></a>
-  <a href="https://vincentzyulive.github.io/VincentZyu233-OBS-stage/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Live_Environment-Pages-7FA8E8?style=for-the-badge&logo=githubpages&logoColor=white" alt="Live Environment Pages"></a>
+  <a href="https://vincentzyulive.github.io/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Live_Environment-Pages-7FA8E8?style=for-the-badge&logo=githubpages&logoColor=white" alt="Live Environment Pages"></a>
   <a href="https://github.com/VincentZyuLive/VincentZyu233-OBS-stage" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
 </p>
 
@@ -18,7 +18,7 @@
 
 ## 🖼️ 预览
 
-在线环境站：https://vincentzyulive.github.io/VincentZyu233-OBS-stage/
+在线环境站：https://vincentzyulive.github.io/
 
 ### 🎛️ WebUI
 
@@ -43,6 +43,7 @@
 - 内置 LXGW WenKai Mono Medium（SIL OFL 1.1），WebUI 和舞台默认统一使用霞鹜文楷
 - 支持上传头像并作为舞台品牌徽章
 - WebUI 提供 16:9 实时设计预览和内容源位置参考
+- 可选 B站状态 HUD：Scene URL 带 `?status=verbose` 时显示直播状态、标题、分区、人气和粉丝数
 - 可选 OBS WebSocket：测试连接、抓取真实场景截图、一键创建或更新舞台层
 - 一键套用只管理 `Stage BG` 和 `Stage Frame`，不移动现有采集、播放器或弹幕
 - 背景为静态 PNG，前景为轻量 Browser Source；场景隐藏时可关闭浏览器源
@@ -94,6 +95,16 @@ http://127.0.0.1:6162/admin
 
 密码只保留在页面内存或 `OBS_WEBSOCKET_PASSWORD` 环境变量中，不写入配置文件。更多说明见 [docs/obs-websocket.md](docs/obs-websocket.md)。
 
+## 📺 B站状态 HUD
+
+在任意场景地址后添加 `?status=verbose` 即可显示只读 B站状态：
+
+```text
+http://127.0.0.1:6162/stage/full-screen?status=verbose
+```
+
+HUD 显示直播状态、标题、分区、人气、粉丝数和更新时间，数据来自 B站公开房间接口。不带该参数时页面和以前完全一致，不创建 HUD、不请求状态接口。
+
 ## 📁 布局
 
 - `no-screen`：中央主播放器卡，顶部品牌栏，无弹幕槽位。
@@ -127,15 +138,10 @@ uv run pytest -q
 uv run scripts/measure_processes.py --name python --name obs-browser-page --seconds 10
 ```
 
-VitePress 本地开发端口为 `16162`：
+直播环境站已迁移到独立仓库：
 
-```bash
-cd website
-npm install
-npm run docs:dev
-```
-
-访问：`http://127.0.0.1:16162/VincentZyu233-OBS-stage/`
+- 线上地址：<https://vincentzyulive.github.io/>
+- 源码仓库：<https://github.com/VincentZyuLive/VincentZyuLive.github.io>
 
 ## 📄 License
 

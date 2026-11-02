@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>OBS Stage</title>
     <link rel="icon" type="image/png" href="/static/assets/obs-stage-avatar.png" />
-    <link rel="stylesheet" href="/static/stage.css?v=1600x900-4" />
+    <link rel="stylesheet" href="/static/stage.css?v=1600x900-hud-1" />
   </head>
   <body>
     <main id="stage" class="stage" data-scene="no-screen">
@@ -32,6 +32,20 @@
           <div id="brandSubtitle" class="brand-subtitle">点点关注点点三连谢谢喵Thanks♪(･ω･)ﾉ</div>
         </div>
       </header>
+      <aside id="statusHud" class="status-hud" hidden aria-live="polite">
+        <div class="status-top">
+          <span id="statusPill" class="status-pill" data-state="loading">读取中</span>
+          <span id="statusRoom" class="status-room">ROOM</span>
+        </div>
+        <div id="statusTitle" class="status-title">正在读取 B站直播间状态…</div>
+        <div class="status-grid">
+          <span>分区 <strong id="statusArea">--</strong></span>
+          <span>人气 <strong id="statusOnline">--</strong></span>
+          <span>粉丝 <strong id="statusFollowers">--</strong></span>
+          <span>开播 <strong id="statusLiveTime">--</strong></span>
+        </div>
+        <div id="statusUpdated" class="status-updated">等待更新</div>
+      </aside>
       <div id="sceneBadge" class="scene-badge">NO SCREEN</div>
       <div id="clock" class="clock">00:00</div>
       <div id="particles" class="particles" aria-hidden="true"></div>
@@ -40,6 +54,6 @@
       <div class="corner corner-bl"></div>
       <div class="corner corner-br"></div>
     </main>
-    <script type="module" src="/static/stage.js?v=1600x900-3"></script>
+    <script type="module" src="/static/stage.js?v=1600x900-hud-1"></script>
   </body>
 </html>

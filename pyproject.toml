@@ -13,6 +13,7 @@ authors = [{ name = "Vincent Zyu" }]
 keywords = ["obs", "stage", "overlay", "streaming", "browser-source"]
 dependencies = [
   "fastapi>=0.115.0",
+  "httpx>=0.28.0",
   "pillow>=11.0.0",
   "python-multipart>=0.0.20",
   "simpleobsws>=1.4.3",

@@ -10,6 +10,7 @@ from typing import Annotated, Any
 from fastapi import FastAPI, File, HTTPException, UploadFile, WebSocket, WebSocketDisconnect
 from fastapi.responses import FileResponse, RedirectResponse
 
+from .bili_status import BilibiliStatusService
 from .config import ConfigStore
 from .models import AppConfig, ObsApplyRequest, ObsRequest, SceneId
 from .obs_ws import ObsController, ObsError
@@ -49,6 +50,7 @@ class Runtime:
         self.avatar = AvatarStore(store.data_dir)
         self.renderer = BackgroundRenderer(store.data_dir)
         self.obs = ObsController(self.config.obs.url)
+        self.bili_status = BilibiliStatusService()
         self.hub = BroadcastHub()
 
     def save_config(self, config: AppConfig) -> None:
@@ -63,7 +65,10 @@ class Runtime:
 def create_app(runtime: Runtime) -> FastAPI:
     @asynccontextmanager
     async def lifespan(_app: FastAPI) -> AsyncIterator[None]:
-        yield
+        try:
+            yield
+        finally:
+            await runtime.bili_status.close()
 
     app = FastAPI(title="OBS Stage", lifespan=lifespan)
     app.state.runtime = runtime
@@ -102,6 +107,10 @@ def create_app(runtime: Runtime) -> FastAPI:
             "avatar_revision": runtime.avatar.revision(),
             "stage_urls": {
                 scene.value: runtime.stage_url(scene) for scene in SceneId
+            },
+            "verbose_stage_urls": {
+                scene.value: f"{runtime.stage_url(scene)}?status=verbose"
+                for scene in SceneId
             },
         }
 
@@ -149,6 +158,13 @@ def create_app(runtime: Runtime) -> FastAPI:
             raise HTTPException(status_code=404, detail="未知场景")
         path = await asyncio.to_thread(runtime.renderer.render, scene, runtime.config)
         return FileResponse(path, media_type="image/png", headers={"Cache-Control": "no-store"})
+
+    @app.get("/api/live-status")
+    async def live_status() -> dict[str, Any]:
+        return await runtime.bili_status.get_status(
+            runtime.config.status.room_id,
+            runtime.config.status.refresh_seconds,
+        )
 
     @app.post("/api/obs/test")
     async def obs_test(payload: ObsRequest) -> dict[str, Any]:

@@ -10,6 +10,8 @@ const elements = {
   previewStage: byId("previewStage"),
   previewFrame: byId("previewFrame"),
   stageUrl: byId("stageUrl"),
+  statusUrl: byId("statusUrl"),
+  statusPreviewToggle: byId("statusPreviewToggle"),
   downloadBgBtn: byId("downloadBgBtn"),
   sourceGuide: byId("sourceGuide"),
   avatarFile: byId("avatarFile"),
@@ -23,6 +25,7 @@ const state = {
   avatarRevision: "none",
   activeScene: "full-screen",
   stageUrls: {},
+  verboseStageUrls: {},
 };
 
 function getPath(object, path) {
@@ -116,9 +119,12 @@ function updateSceneUi() {
   for (const tab of elements.sceneTabs.querySelectorAll(".scene-tab")) {
     tab.classList.toggle("active", tab.dataset.scene === state.activeScene);
   }
-  elements.previewFrame.src = `/stage/${state.activeScene}?preview=1`;
+  const statusQuery = elements.statusPreviewToggle.checked ? "&status=verbose" : "";
+  elements.previewFrame.src = `/stage/${state.activeScene}?preview=1${statusQuery}`;
   const stageUrl = state.stageUrls[state.activeScene] || `${location.origin}/stage/${state.activeScene}`;
+  const statusUrl = state.verboseStageUrls[state.activeScene] || `${stageUrl}?status=verbose`;
   elements.stageUrl.textContent = stageUrl;
+  elements.statusUrl.textContent = statusUrl;
   elements.downloadBgBtn.href = `/api/background/${state.activeScene}.png`;
   elements.downloadBgBtn.download = `obs-stage-${state.activeScene}-background.png`;
   elements.previewFrame.hidden = false;
@@ -229,6 +235,7 @@ async function boot() {
   state.config = data.config;
   state.avatarRevision = data.avatar_revision;
   state.stageUrls = data.stage_urls;
+  state.verboseStageUrls = data.verbose_stage_urls || {};
   fillForm();
   switchScene(state.activeScene);
 }
@@ -270,16 +277,18 @@ byId("previewObsBtn").addEventListener("click", () => previewObs().catch((error)
 }));
 byId("applySceneBtn").addEventListener("click", () => applyObs(false).catch((error) => showNotice(error.message, true)));
 byId("applyAllBtn").addEventListener("click", () => applyObs(true).catch((error) => showNotice(error.message, true)));
-async function copyStageUrl() {
+async function copyText(text, successMessage) {
   try {
-    await navigator.clipboard.writeText(elements.stageUrl.textContent);
-    showNotice("OBS 舞台源地址已复制。");
+    await navigator.clipboard.writeText(text);
+    showNotice(successMessage);
   } catch {
     showNotice("复制失败，请手动选择地址。", true);
   }
 }
-byId("copyUrlBtn").addEventListener("click", copyStageUrl);
-byId("copyUrlSideBtn").addEventListener("click", copyStageUrl);
+byId("copyUrlBtn").addEventListener("click", () => copyText(elements.stageUrl.textContent, "OBS 舞台源地址已复制。"));
+byId("copyUrlSideBtn").addEventListener("click", () => copyText(elements.stageUrl.textContent, "OBS 舞台源地址已复制。"));
+byId("copyStatusUrlBtn").addEventListener("click", () => copyText(elements.statusUrl.textContent, "带状态 HUD 的舞台地址已复制。"));
+elements.statusPreviewToggle.addEventListener("change", updateSceneUi);
 window.addEventListener("resize", resizePreview);
 
 boot().catch((error) => showNotice(`初始化失败：${error.message}`, true));
