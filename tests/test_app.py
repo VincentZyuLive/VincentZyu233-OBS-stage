@@ -41,7 +41,15 @@ def test_pages_config_background_and_avatar(tmp_path: Path) -> None:
         )
         assert upload.status_code == 200
         assert client.get("/api/avatar").status_code == 200
-        assert client.delete("/api/avatar").status_code == 200
+        deleted = client.delete("/api/avatar")
+        assert deleted.status_code == 200
+        payload = deleted.json()
+        assert payload["ok"] is True
+        assert payload["revision"] != "none"
+        restored = client.get("/api/avatar")
+        assert restored.status_code == 200
+        assert restored.headers["content-type"] == "image/png"
+        assert restored.content.startswith(b"\x89PNG")
 
 
 def test_config_can_be_updated(tmp_path: Path) -> None:

@@ -41,7 +41,8 @@
 - 三套独立布局：`no-screen`、`half-screen`、`full-screen`
 - 水色雾蓝主题，可调整完整调色板、背景风格、圆角、辉光、粒子与字体
 - 内置 LXGW WenKai Mono Medium（SIL OFL 1.1），WebUI 和舞台默认统一使用霞鹜文楷
-- 支持上传头像并作为舞台品牌徽章
+- 支持上传头像并作为舞台品牌徽章，也可一键恢复内置默认头像
+- 默认头像源文件随仓库分发，运行时生成到 `<data_dir>/avatar/avatar.png`
 - WebUI 提供 16:9 实时设计预览和内容源位置参考
 - 可选 B站状态 HUD：通过 `?hud=corner|bottom|top|none` 选择左下角卡片、底部横条、顶部横条或不显示
 - 可选 OBS WebSocket：测试连接、抓取真实场景截图、一键创建或更新舞台层
