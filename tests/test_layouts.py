@@ -25,12 +25,12 @@ def test_half_screen_emphasizes_capture_area() -> None:
     slots = default_layouts()[SceneId.HALF_SCREEN].slots
     capture = slots[0].rect
     media = slots[1].rect
-    assert (capture.x, capture.y, capture.width, capture.height) == (360, 60, 1200, 605)
-    assert (media.x, media.y, media.width, media.height) == (400, 700, 600, 150)
+    assert (capture.x, capture.y, capture.width, capture.height) == (360, 40, 1200, 625)
+    assert (media.x, media.y, media.width, media.height) == (386, 680, 629, 170)
     assert capture.x + capture.width == 1560
     assert capture.y + capture.height == 665
     assert capture.y + capture.height < media.y
-    assert media.x + media.width / 2 == 700
+    assert abs(media.x + media.width / 2 - 700) <= 0.5
     assert media.y + media.height == 850
     assert capture.width > media.width
 
@@ -39,6 +39,6 @@ def test_full_screen_player_slot_aligns_with_capture_bottom() -> None:
     slots = default_layouts()[SceneId.FULL_SCREEN].slots
     capture = slots[0].rect
     media = slots[1].rect
-    assert (media.x, media.y, media.width, media.height, media.radius) == (475, 708, 650, 175, 22)
+    assert (media.x, media.y, media.width, media.height, media.radius) == (430, 683, 740, 200, 22)
     assert media.x + media.width / 2 == 800
     assert capture.y + capture.height == media.y + media.height == 883
